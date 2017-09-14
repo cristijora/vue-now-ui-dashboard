@@ -1,0 +1,144 @@
+<template>
+  <div>
+    <div class="row">
+      <div class="col-md-4">
+        <chart-card title="Email Statistics"
+                    sub-title="Last Campaign Performance"
+                    chart-type="Pie"
+                    :chart-data="emailStatsChart.data">
+          <template slot="legend">
+            <i class="fa fa-circle text-gray"></i> Open
+            <i class="fa fa-circle text-primary"></i> Bounce
+            <i class="fa fa-circle text-warning"></i> Unsubscribe
+          </template>
+        </chart-card>
+      </div>
+      <div class="col-md-8">
+        <chart-card title="Users Behavior"
+                    sub-title="24 Hours performance"
+                    :chart-data="usersChart.data"
+                    :chart-options="usersChart.options"
+                    :chart-responsive-options="usersChart.responsiveOptions"
+        >
+          <div class="statistics-container">
+            <div class="statistics">
+              <p class="description">NASDAQ: AAPL</p>
+              <h3>127.33</h3>
+              <h6>OCT 2:16 PM EDT</h6>
+            </div>
+            <div class="statistics-badge">
+            <span class="badge badge-primary">
+                <i class="now-ui-icons media-2_sound-wave"></i>
+                1 Year
+            </span>
+            </div>
+          </div>
+
+          <template slot="stats">
+            <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+          </template>
+        </chart-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <chart-card title="2014 Sales"
+                    sub-title="All products including Taxes"
+                    chart-type="Bar"
+                    :chart-data="salesChart.data"
+                    :chart-options="salesChart.options"
+                    :chart-responsive-options="salesChart.responsiveOptions">
+          <template slot="legend">
+            <i class="fa fa-circle text-gray"></i> Tesla Model S
+            <i class="fa fa-circle text-primary"></i> BMW 5 Series
+          </template>
+          <template slot="stats">
+            <i class="now-ui-icons ui-1_check"></i> Data information certified
+          </template>
+        </chart-card>
+      </div>
+    </div>
+  </div>
+
+</template>
+<script>
+  import ChartCard from 'src/components/UIComponents/Cards/ChartCard.vue'
+  export default {
+    components: {ChartCard},
+    data(){
+      return {
+        emailStatsChart: {
+          data: {
+            labels: ['62%','32%','10%'],
+            series: [62, 32, 10]
+          }
+        },
+        usersChart: {
+          data: {
+            labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
+            series: [
+              [287, 385, 490, 492, 554, 586, 698, 695, 752]
+            ]
+          },
+          options: {
+            low: 0,
+            high: 800,
+            chartPadding: 0,
+            showArea: true,
+            height: "245px",
+            axisX: {
+              showGrid: false,
+            },
+            axisY: {
+              showGrid: false,
+            },
+            lineSmooth: this.$Chartist.Interpolation.simple({
+              divisor: 6
+            }),
+            showLine: false,
+            showPoint: true,
+            fullWidth: true
+          },
+          responsiveOptions: [
+            ['screen and (max-width: 640px)', {
+              axisX: {
+                labelInterpolationFnc: function (value) {
+                  return value[0];
+                }
+              }
+            }]
+          ]
+        },
+        salesChart: {
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            series: [
+              [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
+              [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
+            ]
+          },
+          options: {
+            seriesBarDistance: 10,
+            axisX: {
+              showGrid: false
+            },
+            height: '245px'
+          },
+          responsiveOptions: [
+            ['screen and (max-width: 640px)', {
+              seriesBarDistance: 5,
+              axisX: {
+                labelInterpolationFnc: function (value) {
+                  return value[0];
+                }
+              }
+            }]
+          ]
+        }
+      }
+    },
+  }
+</script>
+<style>
+
+</style>
