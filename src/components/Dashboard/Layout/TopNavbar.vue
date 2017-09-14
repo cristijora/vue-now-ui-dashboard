@@ -18,17 +18,17 @@
           <span class="navbar-toggler-bar bar3"></span>
         </button>
       </div>
-      <a class="navbar-brand" href="#pablo"> Dashboard </a>
+      <a class="navbar-brand" href="#"> Dashboard </a>
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
 
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#pablo">
+            <a class="nav-link" href="#">
               <p class="hidden-lg hidden-md">Account</p>
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <p>
                 Dropdown
@@ -42,7 +42,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#pablo">
+            <a class="nav-link" href="#">
               <p class="hidden-lg hidden-md">Log out</p>
             </a>
           </li>

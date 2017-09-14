@@ -12,7 +12,7 @@
     </template>
     <div>
       <slot></slot>
-      <div :id="chartId" class="ct-chart"></div>
+      <div :id="chartId" class="ct-chart" :class="chartClasses"></div>
       <div class="footer">
         <div class="legend">
           <slot name="legend"></slot>
@@ -43,6 +43,10 @@
       chartType: {
         type: String,
         default: 'Line' // Line | Pie | Bar
+      },
+      chartClasses: {
+        type: String,
+        default: ''
       },
       chartOptions: {
         type: Object,

@@ -5,6 +5,7 @@
         <chart-card title="Email Statistics"
                     sub-title="Last Campaign Performance"
                     chart-type="Pie"
+                    chart-classes="ct-perfect-fourth"
                     :chart-data="emailStatsChart.data">
           <template slot="legend">
             <i class="fa fa-circle text-gray"></i> Open
@@ -57,14 +58,55 @@
           </template>
         </chart-card>
       </div>
+      <div class="col-md-6">
+        <Card>
+          <template slot="header">
+            <h5 class="title">Tasks</h5>
+            <p class="category">Backend development</p>
+          </template>
+          <n-table  :data="tableData.data"
+                    :columns="tableData.columns">
+            <template slot="columns"></template>
+
+            <template scope="props">
+              <td>
+                <Checkbox v-model="props.item.checked"></Checkbox>
+              </td>
+              <td>{{props.item.title}}</td>
+              <td class="td-actions text-right">
+                <button type="button" rel="tooltip" title=""
+                        class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
+                        data-original-title="Edit Task">
+                  <i class="now-ui-icons ui-2_settings-90"></i>
+                </button>
+                <button type="button" rel="tooltip" title=""
+                        class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
+                        data-original-title="Remove">
+                  <i class="now-ui-icons ui-1_simple-remove"></i>
+                </button>
+              </td>
+            </template>
+          </n-table>
+          <div class="footer">
+            <hr>
+            <div class="stats">
+              <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+            </div>
+          </div>
+        </Card>
+
+      </div>
     </div>
   </div>
 
 </template>
 <script>
+  import Checkbox from 'src/components/UIComponents/Inputs/Checkbox.vue'
   import ChartCard from 'src/components/UIComponents/Cards/ChartCard.vue'
+  import Table from 'src/components/UIComponents/Table.vue'
+  import Card from 'src/components/UIComponents/Cards/Card.vue'
   export default {
-    components: {ChartCard},
+    components: {ChartCard, 'n-table': Table, Checkbox, Card},
     data(){
       return {
         emailStatsChart: {
@@ -133,6 +175,17 @@
                 }
               }
             }]
+          ]
+        },
+        tableData: {
+          columns:['name','test'],
+          data: [
+            {title: 'Sign contract for "What are conference organizers afraid of?"', checked: false},
+            {title: 'Lines From Great Russian Literature? Or E-mails From My Boss?', checked: true},
+            {title: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit', checked: true},
+            {title: 'Create 4 Invisible User Experiences you Never Knew About', checked: false},
+            {title: 'Read "Following makes Medium better"', checked: false},
+            {title: 'Unfollow 5 enemies from twitter', checked: false}
           ]
         }
       }
