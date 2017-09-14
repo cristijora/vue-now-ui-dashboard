@@ -7,6 +7,26 @@ const SidebarStore = {
       name: 'Dashboard',
       icon: 'now-ui-icons design_app',
       path: '/admin/overview'
+    },
+    {
+      name: 'Table List',
+      icon: 'now-ui-icons text_align-center',
+      path: '/admin/tables'
+    },
+    {
+      name: 'Typography',
+      icon: 'now-ui-icons files_paper',
+      path: '/admin/typography'
+    },
+    {
+      name: 'Icons',
+      icon: 'now-ui-icons objects_diamond',
+      path: '/admin/icons'
+    },
+    {
+      name: 'Maps',
+      icon: 'now-ui-icons location_pin',
+      path: '/admin/maps'
     }
   ],
   displaySidebar (value) {

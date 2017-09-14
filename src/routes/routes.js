@@ -4,6 +4,10 @@ import NotFound from '../components/GeneralViews/NotFoundPage.vue'
 
 // Admin pages
 import Overview from 'src/components/Dashboard/Views/Overview.vue'
+import TableList from 'src/components/Dashboard/Views/TableList.vue'
+import Maps from 'src/components/Dashboard/Views/Maps.vue'
+import Typography from 'src/components/Dashboard/Views/Typography.vue'
+import Icons from 'src/components/Dashboard/Views/Icons.vue'
 
 const routes = [
   {
@@ -20,6 +24,26 @@ const routes = [
         path: 'overview',
         name: 'overview',
         component: Overview
+      },
+      {
+        path: 'tables',
+        name: 'Table List',
+        component: TableList
+      },
+      {
+        path: 'typography',
+        name: 'Typography',
+        component: Typography
+      },
+      {
+        path: 'icons',
+        name: 'Icons',
+        component: Icons
+      },
+      {
+        path: 'maps',
+        name: 'Maps',
+        component: Maps
       }
     ]
   },

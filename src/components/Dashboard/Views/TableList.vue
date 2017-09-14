@@ -1,25 +1,47 @@
 <template>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <paper-table :title="table1.title" :sub-title="table1.subTitle" :data="table1.data" :columns="table1.columns">
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <Card>
+            <template slot="header">
+              <h5 class="title">Striped Table with Hover</h5>
+              <p class="category">Here is a subtitle for this table</p>
+            </template>
+            <div class="table-responsive table-full-width">
+              <n-table class="table table-hover table-striped"
+                       :columns="table1.columns"
+                       :data="table1.data">
 
-          </paper-table>
+              </n-table>
+            </div>
+          </Card>
+
         </div>
-      </div>
 
-      <div class="col-md-12">
-        <div class="card card-plain">
-          <paper-table type="hover" :title="table2.title" :sub-title="table2.subTitle" :data="table2.data" :columns="table2.columns">
+        <div class="col-md-12">
+          <Card class="card-plain">
+            <template slot="header">
+              <h5 class="title">Table on Plain Background</h5>
+              <p class="category">Here is a subtitle for this table</p>
+            </template>
+            <div class="table-responsive table-full-width">
+              <n-table class="table table-hover"
+                       :columns="table1.columns"
+                       :data="table1.data">
 
-          </paper-table>
+              </n-table>
+            </div>
+          </Card>
         </div>
-      </div>
 
+      </div>
     </div>
+  </div>
 </template>
 <script>
-  import PaperTable from 'components/UIComponents/PaperTable.vue'
+  import NTable from 'src/components/UIComponents/Table.vue'
+  import Card from 'src/components/UIComponents/Cards/Card.vue'
   const tableColumns = ['Id', 'Name', 'Salary', 'Country', 'City']
   const tableData = [{
     id: 1,
@@ -59,7 +81,8 @@
 
   export default {
     components: {
-      PaperTable
+      NTable,
+      Card
     },
     data () {
       return {

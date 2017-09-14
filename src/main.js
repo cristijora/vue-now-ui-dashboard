@@ -13,6 +13,7 @@ import routes from './routes/routes'
 // library imports
 import Chartist from 'chartist'
 import './assets/sass/now-ui-dashboard.scss'
+import './assets/css/demo.css'
 import 'es6-promise/auto'
 
 // plugin setup

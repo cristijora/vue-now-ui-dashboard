@@ -1,100 +1,102 @@
 <template>
-  <div>
-    <div class="row">
-      <div class="col-md-4">
-        <chart-card title="Email Statistics"
-                    sub-title="Last Campaign Performance"
-                    chart-type="Pie"
-                    chart-classes="ct-perfect-fourth"
-                    :chart-data="emailStatsChart.data">
-          <template slot="legend">
-            <i class="fa fa-circle text-gray"></i> Open
-            <i class="fa fa-circle text-primary"></i> Bounce
-            <i class="fa fa-circle text-warning"></i> Unsubscribe
-          </template>
-        </chart-card>
-      </div>
-      <div class="col-md-8">
-        <chart-card title="Users Behavior"
-                    sub-title="24 Hours performance"
-                    :chart-data="usersChart.data"
-                    :chart-options="usersChart.options"
-                    :chart-responsive-options="usersChart.responsiveOptions"
-        >
-          <div class="statistics-container">
-            <div class="statistics">
-              <p class="description">NASDAQ: AAPL</p>
-              <h3>127.33</h3>
-              <h6>OCT 2:16 PM EDT</h6>
-            </div>
-            <div class="statistics-badge">
-            <span class="badge badge-primary">
-                <i class="now-ui-icons media-2_sound-wave"></i>
-                1 Year
-            </span>
-            </div>
-          </div>
-
-          <template slot="stats">
-            <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-          </template>
-        </chart-card>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <chart-card title="2014 Sales"
-                    sub-title="All products including Taxes"
-                    chart-type="Bar"
-                    :chart-data="salesChart.data"
-                    :chart-options="salesChart.options"
-                    :chart-responsive-options="salesChart.responsiveOptions">
-          <template slot="legend">
-            <i class="fa fa-circle text-gray"></i> Tesla Model S
-            <i class="fa fa-circle text-primary"></i> BMW 5 Series
-          </template>
-          <template slot="stats">
-            <i class="now-ui-icons ui-1_check"></i> Data information certified
-          </template>
-        </chart-card>
-      </div>
-      <div class="col-md-6">
-        <Card>
-          <template slot="header">
-            <h5 class="title">Tasks</h5>
-            <p class="category">Backend development</p>
-          </template>
-          <n-table  :data="tableData.data"
-                    :columns="tableData.columns">
-            <template slot="columns"></template>
-
-            <template scope="props">
-              <td>
-                <Checkbox v-model="props.item.checked"></Checkbox>
-              </td>
-              <td>{{props.item.title}}</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" title=""
-                        class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
-                        data-original-title="Edit Task">
-                  <i class="now-ui-icons ui-2_settings-90"></i>
-                </button>
-                <button type="button" rel="tooltip" title=""
-                        class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
-                        data-original-title="Remove">
-                  <i class="now-ui-icons ui-1_simple-remove"></i>
-                </button>
-              </td>
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <chart-card title="Email Statistics"
+                      sub-title="Last Campaign Performance"
+                      chart-type="Pie"
+                      chart-classes="ct-perfect-fourth"
+                      :chart-data="emailStatsChart.data">
+            <template slot="legend">
+              <i class="fa fa-circle text-gray"></i> Open
+              <i class="fa fa-circle text-primary"></i> Bounce
+              <i class="fa fa-circle text-warning"></i> Unsubscribe
             </template>
-          </n-table>
-          <div class="footer">
-            <hr>
-            <div class="stats">
-              <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+          </chart-card>
+        </div>
+        <div class="col-md-8">
+          <chart-card title="Users Behavior"
+                      sub-title="24 Hours performance"
+                      :chart-data="usersChart.data"
+                      :chart-options="usersChart.options"
+                      :chart-responsive-options="usersChart.responsiveOptions"
+          >
+            <div class="statistics-container">
+              <div class="statistics">
+                <p class="description">NASDAQ: AAPL</p>
+                <h3>127.33</h3>
+                <h6>OCT 2:16 PM EDT</h6>
+              </div>
+              <div class="statistics-badge">
+              <span class="badge badge-primary">
+                  <i class="now-ui-icons media-2_sound-wave"></i>
+                  1 Year
+              </span>
+              </div>
             </div>
-          </div>
-        </Card>
 
+            <template slot="stats">
+              <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+            </template>
+          </chart-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <chart-card title="2014 Sales"
+                      sub-title="All products including Taxes"
+                      chart-type="Bar"
+                      :chart-data="salesChart.data"
+                      :chart-options="salesChart.options"
+                      :chart-responsive-options="salesChart.responsiveOptions">
+            <template slot="legend">
+              <i class="fa fa-circle text-gray"></i> Tesla Model S
+              <i class="fa fa-circle text-primary"></i> BMW 5 Series
+            </template>
+            <template slot="stats">
+              <i class="now-ui-icons ui-1_check"></i> Data information certified
+            </template>
+          </chart-card>
+        </div>
+        <div class="col-md-6">
+          <Card>
+            <template slot="header">
+              <h5 class="title">Tasks</h5>
+              <p class="category">Backend development</p>
+            </template>
+            <n-table :data="tableData.data"
+                     :columns="tableData.columns">
+              <template slot="columns"></template>
+
+              <template scope="props">
+                <td>
+                  <Checkbox v-model="props.item.checked"></Checkbox>
+                </td>
+                <td>{{props.item.title}}</td>
+                <td class="td-actions text-right">
+                  <button type="button" rel="tooltip" title=""
+                          class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral"
+                          data-original-title="Edit Task">
+                    <i class="now-ui-icons ui-2_settings-90"></i>
+                  </button>
+                  <button type="button" rel="tooltip" title=""
+                          class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral"
+                          data-original-title="Remove">
+                    <i class="now-ui-icons ui-1_simple-remove"></i>
+                  </button>
+                </td>
+              </template>
+            </n-table>
+            <div class="footer">
+              <hr>
+              <div class="stats">
+                <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
+              </div>
+            </div>
+          </Card>
+
+        </div>
       </div>
     </div>
   </div>
