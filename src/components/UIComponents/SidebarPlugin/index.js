@@ -9,6 +9,11 @@ const SidebarStore = {
       path: '/admin/overview'
     },
     {
+      name: 'User Profile',
+      icon: 'now-ui-icons users_single-02',
+      path: '/admin/user'
+    },
+    {
       name: 'Table List',
       icon: 'now-ui-icons text_align-center',
       path: '/admin/tables'

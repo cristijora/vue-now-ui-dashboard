@@ -1,29 +1,30 @@
 <template>
-    <div class="row">
-      <div class="col-lg-4 col-md-5">
-        <user-card>
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <edit-profile-form>
 
-        </user-card>
-        <members-card>
+          </edit-profile-form>
 
-        </members-card>
-      </div>
-      <div class="col-lg-8 col-md-7">
-        <edit-profile-form>
+        </div>
+        <div class="col-md-4">
+          <user-card>
 
-        </edit-profile-form>
+          </user-card>
+        </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
   import EditProfileForm from './UserProfile/EditProfileForm.vue'
   import UserCard from './UserProfile/UserCard.vue'
-  import MembersCard from './UserProfile/MembersCard.vue'
+
   export default {
     components: {
       EditProfileForm,
-      UserCard,
-      MembersCard
+      UserCard
     }
   }
 

@@ -1,39 +1,41 @@
 <template>
-  <div class="card card-user">
-    <div class="image">
-      <img src="static/img/background.jpg" alt="...">
-    </div>
-    <div class="content">
-      <div class="author">
-        <img class="avatar border-white" src="static/img/faces/face-2.jpg" alt="...">
-        <h4 class="title">Chet Faker
-          <br>
-          <a href="#">
-            <small>@chetfaker</small>
-          </a>
-        </h4>
-      </div>
-      <p class="description text-center">
-        "I like the way you work it
-        <br> No diggity
-        <br> I wanna bag it up"
+  <Card class="card-user">
+    <img slot="image" src="static/img/bg5.jpg" alt="..."/>
+    <div class="author">
+      <a href="#">
+        <img class="avatar border-gray" src="static/img/ryan.jpg" alt="...">
+        <h5 class="title">Mike Andrew</h5>
+      </a>
+      <p class="description">
+        michael24
       </p>
     </div>
-    <hr>
-    <div class="text-center">
-      <div class="row">
-        <div v-for="(info,index) in details" :class="getClasses(index)">
-          <h5>
-            <br>
-            <small></small>
-          </h5>
-        </div>
+    <p class="description text-center">
+      "Lamborghini Mercy <br>
+      Your chick she so thirsty <br>
+      I'm in that two seat Lambo"
+    </p>
+
+    <template slot="footer">
+      <hr>
+      <div class="button-container">
+        <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+          <i class="fa fa-facebook-square"></i>
+        </button>
+        <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+          <i class="fa fa-twitter"></i>
+        </button>
+        <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+          <i class="fa fa-google-plus-square"></i>
+        </button>
       </div>
-    </div>
-  </div>
+    </template>
+  </Card>
 </template>
 <script>
+  import Card from 'src/components/UIComponents/Cards/Card.vue'
   export default {
+    components: {Card},
     data () {
       return {
         details: [
@@ -68,5 +70,5 @@
 
 </script>
 <style>
-  
+
 </style>

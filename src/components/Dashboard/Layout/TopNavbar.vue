@@ -18,7 +18,7 @@
           <span class="navbar-toggler-bar bar3"></span>
         </button>
       </div>
-      <a class="navbar-brand" href="#"> Dashboard </a>
+      <a class="navbar-brand" href="#" v-if="$route"> {{$route.name}} </a>
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
 
         <ul class="navbar-nav">

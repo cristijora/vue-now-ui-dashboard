@@ -1,111 +1,90 @@
 <template>
-  <div class="card">
-    <div class="header">
-      <h4 class="title">Edit Profile</h4>
-    </div>
-    <div class="content">
-      <form>
-        <div class="row">
-          <div class="col-md-5">
-            <fg-input type="text"
-                      label="Company"
-                      :disabled="true"
-                      placeholder="Paper dashboard"
-                      v-model="user.company">
-            </fg-input>
-          </div>
-          <div class="col-md-3">
-
-            <fg-input type="text"
-                      label="Username"
-                      placeholder="Username"
-                      v-model="user.username">
-            </fg-input>
-          </div>
-          <div class="col-md-4">
-            <fg-input type="email"
-                      label="Username"
-                      placeholder="Email"
-                      v-model="user.email">
-            </fg-input>
+  <Card>
+    <template slot="header">
+      <h5 class="title">Edit Profile</h5>
+    </template>
+    <form>
+      <div class="row">
+        <div class="col-md-5 pr-1">
+          <div class="form-group">
+            <label>Company (disabled)</label>
+            <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <fg-input type="text"
-                      label="First Name"
-                      placeholder="First Name"
-                      v-model="user.firstName">
-            </fg-input>
-          </div>
-          <div class="col-md-6">
-            <fg-input type="text"
-                      label="Last Name"
-                      placeholder="Last Name"
-                      v-model="user.lastName">
-            </fg-input>
+        <div class="col-md-3 px-1">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" placeholder="Username" value="michael23">
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <fg-input type="text"
-                      label="Address"
-                      placeholder="Home Address"
-                      v-model="user.address">
-            </fg-input>
+        <div class="col-md-4 pl-1">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" placeholder="Email">
           </div>
         </div>
+      </div>
 
-        <div class="row">
-          <div class="col-md-4">
-            <fg-input type="text"
-                      label="City"
-                      placeholder="City"
-                      v-model="user.city">
-            </fg-input>
-          </div>
-          <div class="col-md-4">
-            <fg-input type="text"
-                      label="Country"
-                      placeholder="Country"
-                      v-model="user.country">
-            </fg-input>
-          </div>
-          <div class="col-md-4">
-            <fg-input type="number"
-                      label="Postal Code"
-                      placeholder="ZIP Code"
-                      v-model="user.postalCode">
-            </fg-input>
+      <div class="row">
+        <div class="col-md-6 pr-1">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" placeholder="Company" value="Mike">
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label>About Me</label>
-              <textarea rows="5" class="form-control border-input"
-                        placeholder="Here can be your description"
-                        v-model="user.aboutMe">
-
-              </textarea>
-            </div>
+        <div class="col-md-6 pl-1">
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
           </div>
         </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-info btn-fill btn-wd" @click.prevent="updateProfile">
-            Update Profile
-          </button>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+          </div>
         </div>
-        <div class="clearfix"></div>
-      </form>
-    </div>
-  </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 pr-1">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" placeholder="City" value="Mike">
+          </div>
+        </div>
+        <div class="col-md-4 px-1">
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" placeholder="Country" value="Andrew">
+          </div>
+        </div>
+        <div class="col-md-4 pl-1">
+          <div class="form-group">
+            <label>Postal Code</label>
+            <input type="number" class="form-control" placeholder="ZIP Code">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>About Me</label>
+            <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </Card>
 </template>
 <script>
+  import Card from 'src/components/UIComponents/Cards/Card.vue'
+
   export default {
+    components: {Card},
     data () {
       return {
         user: {
