@@ -12,7 +12,7 @@
     "test": "npm run unit"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.0",
     "chartist": "^0.10.1",
     "es6-promise": "^4.1.1",
     "google-maps": "^3.2.1",
